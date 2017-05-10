@@ -1,90 +1,17 @@
-var _user$project$Main$countElements = function (xs) {
-	var countElements_ = F2(
-		function (xs_, acc_) {
-			countElements_:
-			while (true) {
-				var _p0 = xs_;
-				if (_p0.ctor === '[]') {
-					return acc_;
-				} else {
-					var _v1 = _p0._1,
-						_v2 = acc_ + 1;
-					xs_ = _v1;
-					acc_ = _v2;
-					continue countElements_;
-				}
-			}
-		});
-	return A2(countElements_, xs, 0);
+var _user$project$Main$filterAndReverse = function (str) {
+	return _elm_lang$core$String$toUpper(
+		_elm_lang$core$String$reverse(
+			A4(
+				_elm_lang$core$Regex$replace,
+				_elm_lang$core$Regex$All,
+				_elm_lang$core$Regex$regex('[^a-zA-Z0-9]'),
+				function (_p0) {
+					return '';
+				},
+				str)));
 };
-var _user$project$Main$test = _elm_lang$core$List$length(
-	A2(
-		_elm_lang$core$List$filter,
-		F2(
-			function (x, y) {
-				return _elm_lang$core$Native_Utils.eq(x, y);
-			})(false),
-		{
-			ctor: '::',
-			_0: _elm_lang$core$Native_Utils.eq(
-				_user$project$Main$countElements(
-					A2(_elm_lang$core$List$range, 1, 4000)),
-				4000),
-			_1: {
-				ctor: '::',
-				_0: _elm_lang$core$Native_Utils.eq(
-					_user$project$Main$countElements(
-						{
-							ctor: '::',
-							_0: 1,
-							_1: {ctor: '[]'}
-						}),
-					1),
-				_1: {
-					ctor: '::',
-					_0: _elm_lang$core$Native_Utils.eq(
-						_user$project$Main$countElements(
-							{ctor: '[]'}),
-						0),
-					_1: {
-						ctor: '::',
-						_0: _elm_lang$core$Native_Utils.eq(
-							_user$project$Main$countElements(
-								{
-									ctor: '::',
-									_0: _elm_lang$core$Native_Utils.chr('a'),
-									_1: {
-										ctor: '::',
-										_0: _elm_lang$core$Native_Utils.chr('b'),
-										_1: {
-											ctor: '::',
-											_0: _elm_lang$core$Native_Utils.chr('c'),
-											_1: {ctor: '[]'}
-										}
-									}
-								}),
-							3),
-						_1: {ctor: '[]'}
-					}
-				}
-			}
-		}));
-var _user$project$Main$main = _elm_lang$virtual_dom$Native_VirtualDom.staticProgram(
-	_elm_lang$html$Html$text(
-		function () {
-			var _p1 = _user$project$Main$test;
-			switch (_p1) {
-				case 0:
-					return 'Your implementation passed all tests.';
-				case 1:
-					return 'Your implementation failed one test.';
-				default:
-					return A2(
-						_elm_lang$core$Basics_ops['++'],
-						'Your implementation failed ',
-						A2(
-							_elm_lang$core$Basics_ops['++'],
-							_elm_lang$core$Basics$toString(_p1),
-							' tests.'));
-			}
-		}()));
+var _user$project$Main$isPalindromeStr = function (str) {
+	return _elm_lang$core$Native_Utils.eq(
+		_user$project$Main$filterAndReverse(str),
+		_elm_lang$core$String$toUpper(str));
+};
