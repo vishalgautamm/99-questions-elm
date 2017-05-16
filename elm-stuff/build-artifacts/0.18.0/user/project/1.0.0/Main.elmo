@@ -1,17 +1,330 @@
-var _user$project$Main$filterAndReverse = function (str) {
-	return _elm_lang$core$String$toUpper(
-		_elm_lang$core$String$reverse(
-			A4(
-				_elm_lang$core$Regex$replace,
-				_elm_lang$core$Regex$All,
-				_elm_lang$core$Regex$regex('[^a-zA-Z0-9]'),
-				function (_p0) {
-					return '';
-				},
-				str)));
-};
-var _user$project$Main$isPalindromeStr = function (str) {
-	return _elm_lang$core$Native_Utils.eq(
-		_user$project$Main$filterAndReverse(str),
-		_elm_lang$core$String$toUpper(str));
-};
+var _user$project$Main$rotate = F2(
+	function (rot, list) {
+		var r = A2(
+			_elm_lang$core$Basics_ops['%'],
+			rot,
+			_elm_lang$core$List$length(list));
+		return A2(
+			_elm_lang$core$Basics_ops['++'],
+			A2(_elm_lang$core$List$drop, r, list),
+			A2(_elm_lang$core$List$take, r, list));
+	});
+var _user$project$Main$test = _elm_lang$core$List$length(
+	A2(
+		_elm_lang$core$List$filter,
+		F2(
+			function (x, y) {
+				return _elm_lang$core$Native_Utils.eq(x, y);
+			})(false),
+		{
+			ctor: '::',
+			_0: _elm_lang$core$Native_Utils.eq(
+				A2(
+					_user$project$Main$rotate,
+					3,
+					{
+						ctor: '::',
+						_0: 1,
+						_1: {
+							ctor: '::',
+							_0: 2,
+							_1: {
+								ctor: '::',
+								_0: 5,
+								_1: {
+									ctor: '::',
+									_0: 5,
+									_1: {
+										ctor: '::',
+										_0: 2,
+										_1: {
+											ctor: '::',
+											_0: 1,
+											_1: {ctor: '[]'}
+										}
+									}
+								}
+							}
+						}
+					}),
+				{
+					ctor: '::',
+					_0: 5,
+					_1: {
+						ctor: '::',
+						_0: 2,
+						_1: {
+							ctor: '::',
+							_0: 1,
+							_1: {
+								ctor: '::',
+								_0: 1,
+								_1: {
+									ctor: '::',
+									_0: 2,
+									_1: {
+										ctor: '::',
+										_0: 5,
+										_1: {ctor: '[]'}
+									}
+								}
+							}
+						}
+					}
+				}),
+			_1: {
+				ctor: '::',
+				_0: _elm_lang$core$Native_Utils.eq(
+					A2(
+						_user$project$Main$rotate,
+						13,
+						A2(_elm_lang$core$List$range, 1, 10)),
+					{
+						ctor: '::',
+						_0: 4,
+						_1: {
+							ctor: '::',
+							_0: 5,
+							_1: {
+								ctor: '::',
+								_0: 6,
+								_1: {
+									ctor: '::',
+									_0: 7,
+									_1: {
+										ctor: '::',
+										_0: 8,
+										_1: {
+											ctor: '::',
+											_0: 9,
+											_1: {
+												ctor: '::',
+												_0: 10,
+												_1: {
+													ctor: '::',
+													_0: 1,
+													_1: {
+														ctor: '::',
+														_0: 2,
+														_1: {
+															ctor: '::',
+															_0: 3,
+															_1: {ctor: '[]'}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}),
+				_1: {
+					ctor: '::',
+					_0: _elm_lang$core$Native_Utils.eq(
+						A2(
+							_user$project$Main$rotate,
+							1,
+							A2(_elm_lang$core$List$range, 1, 5)),
+						{
+							ctor: '::',
+							_0: 2,
+							_1: {
+								ctor: '::',
+								_0: 3,
+								_1: {
+									ctor: '::',
+									_0: 4,
+									_1: {
+										ctor: '::',
+										_0: 5,
+										_1: {
+											ctor: '::',
+											_0: 1,
+											_1: {ctor: '[]'}
+										}
+									}
+								}
+							}
+						}),
+					_1: {
+						ctor: '::',
+						_0: _elm_lang$core$Native_Utils.eq(
+							A2(
+								_user$project$Main$rotate,
+								0,
+								A2(_elm_lang$core$List$range, 1, 5)),
+							{
+								ctor: '::',
+								_0: 1,
+								_1: {
+									ctor: '::',
+									_0: 2,
+									_1: {
+										ctor: '::',
+										_0: 3,
+										_1: {
+											ctor: '::',
+											_0: 4,
+											_1: {
+												ctor: '::',
+												_0: 5,
+												_1: {ctor: '[]'}
+											}
+										}
+									}
+								}
+							}),
+						_1: {
+							ctor: '::',
+							_0: _elm_lang$core$Native_Utils.eq(
+								A2(
+									_user$project$Main$rotate,
+									-1,
+									A2(_elm_lang$core$List$range, 1, 5)),
+								{
+									ctor: '::',
+									_0: 5,
+									_1: {
+										ctor: '::',
+										_0: 1,
+										_1: {
+											ctor: '::',
+											_0: 2,
+											_1: {
+												ctor: '::',
+												_0: 3,
+												_1: {
+													ctor: '::',
+													_0: 4,
+													_1: {ctor: '[]'}
+												}
+											}
+										}
+									}
+								}),
+							_1: {
+								ctor: '::',
+								_0: _elm_lang$core$Native_Utils.eq(
+									A2(
+										_user$project$Main$rotate,
+										-6,
+										A2(_elm_lang$core$List$range, 1, 5)),
+									{
+										ctor: '::',
+										_0: 5,
+										_1: {
+											ctor: '::',
+											_0: 1,
+											_1: {
+												ctor: '::',
+												_0: 2,
+												_1: {
+													ctor: '::',
+													_0: 3,
+													_1: {
+														ctor: '::',
+														_0: 4,
+														_1: {ctor: '[]'}
+													}
+												}
+											}
+										}
+									}),
+								_1: {
+									ctor: '::',
+									_0: _elm_lang$core$Native_Utils.eq(
+										A2(
+											_user$project$Main$rotate,
+											3,
+											A2(_elm_lang$core$List$range, 1, 5)),
+										{
+											ctor: '::',
+											_0: 4,
+											_1: {
+												ctor: '::',
+												_0: 5,
+												_1: {
+													ctor: '::',
+													_0: 1,
+													_1: {
+														ctor: '::',
+														_0: 2,
+														_1: {
+															ctor: '::',
+															_0: 3,
+															_1: {ctor: '[]'}
+														}
+													}
+												}
+											}
+										}),
+									_1: {
+										ctor: '::',
+										_0: _elm_lang$core$Native_Utils.eq(
+											A2(
+												_user$project$Main$rotate,
+												1,
+												{
+													ctor: '::',
+													_0: '1',
+													_1: {
+														ctor: '::',
+														_0: '2',
+														_1: {
+															ctor: '::',
+															_0: '3',
+															_1: {
+																ctor: '::',
+																_0: '4',
+																_1: {ctor: '[]'}
+															}
+														}
+													}
+												}),
+											{
+												ctor: '::',
+												_0: '2',
+												_1: {
+													ctor: '::',
+													_0: '3',
+													_1: {
+														ctor: '::',
+														_0: '4',
+														_1: {
+															ctor: '::',
+															_0: '1',
+															_1: {ctor: '[]'}
+														}
+													}
+												}
+											}),
+										_1: {ctor: '[]'}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}));
+var _user$project$Main$main = _elm_lang$virtual_dom$Native_VirtualDom.staticProgram(
+	_elm_lang$html$Html$text(
+		function () {
+			var _p0 = _user$project$Main$test;
+			switch (_p0) {
+				case 0:
+					return 'Your implementation passed all tests.';
+				case 1:
+					return 'Your implementation failed one test.';
+				default:
+					return A2(
+						_elm_lang$core$Basics_ops['++'],
+						'Your implementation failed ',
+						A2(
+							_elm_lang$core$Basics_ops['++'],
+							_elm_lang$core$Basics$toString(_p0),
+							' tests.'));
+			}
+		}()));
