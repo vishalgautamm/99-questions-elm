@@ -1,13 +1,9 @@
-var _user$project$Main$rotate = F2(
-	function (rot, list) {
-		var r = A2(
-			_elm_lang$core$Basics_ops['%'],
-			rot,
-			_elm_lang$core$List$length(list));
-		return A2(
-			_elm_lang$core$Basics_ops['++'],
-			A2(_elm_lang$core$List$drop, r, list),
-			A2(_elm_lang$core$List$take, r, list));
+var _user$project$Main$insertAt = F3(
+	function (n, v, xs) {
+		var partB = A2(_elm_lang$core$List$drop, n - 1, xs);
+		var partC = {ctor: '::', _0: v, _1: partB};
+		var partA = A2(_elm_lang$core$List$take, n - 1, xs);
+		return A2(_elm_lang$core$Basics_ops['++'], partA, partC);
 	});
 var _user$project$Main$test = _elm_lang$core$List$length(
 	A2(
@@ -19,9 +15,10 @@ var _user$project$Main$test = _elm_lang$core$List$length(
 		{
 			ctor: '::',
 			_0: _elm_lang$core$Native_Utils.eq(
-				A2(
-					_user$project$Main$rotate,
-					3,
+				A3(
+					_user$project$Main$insertAt,
+					2,
+					99,
 					{
 						ctor: '::',
 						_0: 1,
@@ -49,23 +46,27 @@ var _user$project$Main$test = _elm_lang$core$List$length(
 					}),
 				{
 					ctor: '::',
-					_0: 5,
+					_0: 1,
 					_1: {
 						ctor: '::',
-						_0: 2,
+						_0: 99,
 						_1: {
 							ctor: '::',
-							_0: 1,
+							_0: 2,
 							_1: {
 								ctor: '::',
-								_0: 1,
+								_0: 5,
 								_1: {
 									ctor: '::',
-									_0: 2,
+									_0: 5,
 									_1: {
 										ctor: '::',
-										_0: 5,
-										_1: {ctor: '[]'}
+										_0: 2,
+										_1: {
+											ctor: '::',
+											_0: 1,
+											_1: {ctor: '[]'}
+										}
 									}
 								}
 							}
@@ -75,41 +76,62 @@ var _user$project$Main$test = _elm_lang$core$List$length(
 			_1: {
 				ctor: '::',
 				_0: _elm_lang$core$Native_Utils.eq(
-					A2(
-						_user$project$Main$rotate,
-						13,
-						A2(_elm_lang$core$List$range, 1, 10)),
+					A3(
+						_user$project$Main$insertAt,
+						3,
+						99,
+						A2(_elm_lang$core$List$range, 1, 14)),
 					{
 						ctor: '::',
-						_0: 4,
+						_0: 1,
 						_1: {
 							ctor: '::',
-							_0: 5,
+							_0: 2,
 							_1: {
 								ctor: '::',
-								_0: 6,
+								_0: 99,
 								_1: {
 									ctor: '::',
-									_0: 7,
+									_0: 3,
 									_1: {
 										ctor: '::',
-										_0: 8,
+										_0: 4,
 										_1: {
 											ctor: '::',
-											_0: 9,
+											_0: 5,
 											_1: {
 												ctor: '::',
-												_0: 10,
+												_0: 6,
 												_1: {
 													ctor: '::',
-													_0: 1,
+													_0: 7,
 													_1: {
 														ctor: '::',
-														_0: 2,
+														_0: 8,
 														_1: {
 															ctor: '::',
-															_0: 3,
-															_1: {ctor: '[]'}
+															_0: 9,
+															_1: {
+																ctor: '::',
+																_0: 10,
+																_1: {
+																	ctor: '::',
+																	_0: 11,
+																	_1: {
+																		ctor: '::',
+																		_0: 12,
+																		_1: {
+																			ctor: '::',
+																			_0: 13,
+																			_1: {
+																				ctor: '::',
+																				_0: 14,
+																				_1: {ctor: '[]'}
+																			}
+																		}
+																	}
+																}
+															}
 														}
 													}
 												}
@@ -123,26 +145,31 @@ var _user$project$Main$test = _elm_lang$core$List$length(
 				_1: {
 					ctor: '::',
 					_0: _elm_lang$core$Native_Utils.eq(
-						A2(
-							_user$project$Main$rotate,
-							1,
+						A3(
+							_user$project$Main$insertAt,
+							6,
+							99,
 							A2(_elm_lang$core$List$range, 1, 5)),
 						{
 							ctor: '::',
-							_0: 2,
+							_0: 1,
 							_1: {
 								ctor: '::',
-								_0: 3,
+								_0: 2,
 								_1: {
 									ctor: '::',
-									_0: 4,
+									_0: 3,
 									_1: {
 										ctor: '::',
-										_0: 5,
+										_0: 4,
 										_1: {
 											ctor: '::',
-											_0: 1,
-											_1: {ctor: '[]'}
+											_0: 5,
+											_1: {
+												ctor: '::',
+												_0: 99,
+												_1: {ctor: '[]'}
+											}
 										}
 									}
 								}
@@ -151,26 +178,31 @@ var _user$project$Main$test = _elm_lang$core$List$length(
 					_1: {
 						ctor: '::',
 						_0: _elm_lang$core$Native_Utils.eq(
-							A2(
-								_user$project$Main$rotate,
+							A3(
+								_user$project$Main$insertAt,
 								0,
+								99,
 								A2(_elm_lang$core$List$range, 1, 5)),
 							{
 								ctor: '::',
-								_0: 1,
+								_0: 99,
 								_1: {
 									ctor: '::',
-									_0: 2,
+									_0: 1,
 									_1: {
 										ctor: '::',
-										_0: 3,
+										_0: 2,
 										_1: {
 											ctor: '::',
-											_0: 4,
+											_0: 3,
 											_1: {
 												ctor: '::',
-												_0: 5,
-												_1: {ctor: '[]'}
+												_0: 4,
+												_1: {
+													ctor: '::',
+													_0: 5,
+													_1: {ctor: '[]'}
+												}
 											}
 										}
 									}
@@ -179,13 +211,14 @@ var _user$project$Main$test = _elm_lang$core$List$length(
 						_1: {
 							ctor: '::',
 							_0: _elm_lang$core$Native_Utils.eq(
-								A2(
-									_user$project$Main$rotate,
+								A3(
+									_user$project$Main$insertAt,
 									-1,
+									99,
 									A2(_elm_lang$core$List$range, 1, 5)),
 								{
 									ctor: '::',
-									_0: 5,
+									_0: 99,
 									_1: {
 										ctor: '::',
 										_0: 1,
@@ -198,7 +231,11 @@ var _user$project$Main$test = _elm_lang$core$List$length(
 												_1: {
 													ctor: '::',
 													_0: 4,
-													_1: {ctor: '[]'}
+													_1: {
+														ctor: '::',
+														_0: 5,
+														_1: {ctor: '[]'}
+													}
 												}
 											}
 										}
@@ -207,13 +244,14 @@ var _user$project$Main$test = _elm_lang$core$List$length(
 							_1: {
 								ctor: '::',
 								_0: _elm_lang$core$Native_Utils.eq(
-									A2(
-										_user$project$Main$rotate,
-										-6,
+									A3(
+										_user$project$Main$insertAt,
+										1,
+										99,
 										A2(_elm_lang$core$List$range, 1, 5)),
 									{
 										ctor: '::',
-										_0: 5,
+										_0: 99,
 										_1: {
 											ctor: '::',
 											_0: 1,
@@ -226,7 +264,11 @@ var _user$project$Main$test = _elm_lang$core$List$length(
 													_1: {
 														ctor: '::',
 														_0: 4,
-														_1: {ctor: '[]'}
+														_1: {
+															ctor: '::',
+															_0: 5,
+															_1: {ctor: '[]'}
+														}
 													}
 												}
 											}
@@ -235,73 +277,57 @@ var _user$project$Main$test = _elm_lang$core$List$length(
 								_1: {
 									ctor: '::',
 									_0: _elm_lang$core$Native_Utils.eq(
-										A2(
-											_user$project$Main$rotate,
-											3,
-											A2(_elm_lang$core$List$range, 1, 5)),
-										{
-											ctor: '::',
-											_0: 4,
-											_1: {
+										A3(
+											_user$project$Main$insertAt,
+											2,
+											'x',
+											{
 												ctor: '::',
-												_0: 5,
+												_0: '1',
 												_1: {
 													ctor: '::',
-													_0: 1,
+													_0: '2',
 													_1: {
 														ctor: '::',
-														_0: 2,
+														_0: '3',
 														_1: {
 															ctor: '::',
-															_0: 3,
-															_1: {ctor: '[]'}
+															_0: '4',
+															_1: {
+																ctor: '::',
+																_0: '5',
+																_1: {ctor: '[]'}
+															}
+														}
+													}
+												}
+											}),
+										{
+											ctor: '::',
+											_0: '1',
+											_1: {
+												ctor: '::',
+												_0: 'x',
+												_1: {
+													ctor: '::',
+													_0: '2',
+													_1: {
+														ctor: '::',
+														_0: '3',
+														_1: {
+															ctor: '::',
+															_0: '4',
+															_1: {
+																ctor: '::',
+																_0: '5',
+																_1: {ctor: '[]'}
+															}
 														}
 													}
 												}
 											}
 										}),
-									_1: {
-										ctor: '::',
-										_0: _elm_lang$core$Native_Utils.eq(
-											A2(
-												_user$project$Main$rotate,
-												1,
-												{
-													ctor: '::',
-													_0: '1',
-													_1: {
-														ctor: '::',
-														_0: '2',
-														_1: {
-															ctor: '::',
-															_0: '3',
-															_1: {
-																ctor: '::',
-																_0: '4',
-																_1: {ctor: '[]'}
-															}
-														}
-													}
-												}),
-											{
-												ctor: '::',
-												_0: '2',
-												_1: {
-													ctor: '::',
-													_0: '3',
-													_1: {
-														ctor: '::',
-														_0: '4',
-														_1: {
-															ctor: '::',
-															_0: '1',
-															_1: {ctor: '[]'}
-														}
-													}
-												}
-											}),
-										_1: {ctor: '[]'}
-									}
+									_1: {ctor: '[]'}
 								}
 							}
 						}
