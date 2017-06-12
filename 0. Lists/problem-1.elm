@@ -9,6 +9,7 @@ import Maybe
 
 
 -- Solution 1 : Recursion
+--
 -- last : List a -> Maybe a
 -- last xs =
 --     case xs of
@@ -20,8 +21,6 @@ import Maybe
 --
 --         h :: ys ->
 --             last ys
---
---
 -- Solution 2: Reverse the list and take head
 -- last : List a -> Maybe a
 -- last xs =

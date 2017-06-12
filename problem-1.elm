@@ -10,11 +10,11 @@ last xs =
         [] ->
             Nothing
 
-        [ x ] ->
-            Just x
+        [ a ] ->
+            Just a
 
         y :: ys ->
-            last xs
+            last ys
 
 
 main : Html.Html msg
