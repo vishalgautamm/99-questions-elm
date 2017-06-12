@@ -1,10 +1,22 @@
-var _user$project$Main_ops = _user$project$Main_ops || {};
-_user$project$Main_ops['..'] = F2(
-	function (start, end) {
-		return A2(_elm_lang$core$List$range, start, end);
-	});
-var _user$project$Main$sortByListLengths = function (xs) {
-	return A2(_elm_lang$core$List$sortBy, _elm_lang$core$List$length, xs);
+var _user$project$Main$renderList = function (n) {
+	var _p0 = n;
+	if (_p0 === 0) {
+		return {ctor: '[]'};
+	} else {
+		var _p1 = _p0;
+		var x = _user$project$Main$renderList(_p1 - 1);
+		return {
+			ctor: '::',
+			_0: _p1,
+			_1: A2(
+				_elm_lang$core$Basics_ops['++'],
+				{ctor: '[]'},
+				x)
+		};
+	}
+};
+var _user$project$Main$totient = function (n) {
+	return 0;
 };
 var _user$project$Main$test = _elm_lang$core$List$length(
 	A2(
@@ -16,277 +28,65 @@ var _user$project$Main$test = _elm_lang$core$List$length(
 		{
 			ctor: '::',
 			_0: _elm_lang$core$Native_Utils.eq(
-				A2(
-					_elm_lang$core$List$map,
-					_elm_lang$core$List$length,
-					_user$project$Main$sortByListLengths(
-						{
-							ctor: '::',
-							_0: {ctor: '[]'},
-							_1: {
-								ctor: '::',
-								_0: {
-									ctor: '::',
-									_0: 1,
-									_1: {ctor: '[]'}
-								},
-								_1: {
-									ctor: '::',
-									_0: A2(_user$project$Main_ops['..'], 1, 2),
-									_1: {
-										ctor: '::',
-										_0: A2(_user$project$Main_ops['..'], 1, 3),
-										_1: {
-											ctor: '::',
-											_0: A2(_user$project$Main_ops['..'], 1, 4),
-											_1: {
-												ctor: '::',
-												_0: A2(_user$project$Main_ops['..'], 1, 5),
-												_1: {ctor: '[]'}
-											}
-										}
-									}
-								}
-							}
-						})),
-				{
-					ctor: '::',
-					_0: 0,
-					_1: {
-						ctor: '::',
-						_0: 1,
-						_1: {
-							ctor: '::',
-							_0: 2,
-							_1: {
-								ctor: '::',
-								_0: 3,
-								_1: {
-									ctor: '::',
-									_0: 4,
-									_1: {
-										ctor: '::',
-										_0: 5,
-										_1: {ctor: '[]'}
-									}
-								}
-							}
-						}
-					}
-				}),
+				_user$project$Main$totient(10),
+				4),
 			_1: {
 				ctor: '::',
 				_0: _elm_lang$core$Native_Utils.eq(
-					A2(
-						_elm_lang$core$List$map,
-						_elm_lang$core$List$length,
-						_user$project$Main$sortByListLengths(
-							{
-								ctor: '::',
-								_0: {ctor: '[]'},
-								_1: {ctor: '[]'}
-							})),
-					{
-						ctor: '::',
-						_0: 0,
-						_1: {ctor: '[]'}
-					}),
+					_user$project$Main$totient(25),
+					20),
 				_1: {
 					ctor: '::',
 					_0: _elm_lang$core$Native_Utils.eq(
-						A2(
-							_elm_lang$core$List$map,
-							_elm_lang$core$List$length,
-							_user$project$Main$sortByListLengths(
-								{
-									ctor: '::',
-									_0: {ctor: '[]'},
-									_1: {
-										ctor: '::',
-										_0: {
-											ctor: '::',
-											_0: 1,
-											_1: {ctor: '[]'}
-										},
-										_1: {
-											ctor: '::',
-											_0: A2(_user$project$Main_ops['..'], 1, 100000),
-											_1: {
-												ctor: '::',
-												_0: A2(_user$project$Main_ops['..'], 1, 4),
-												_1: {
-													ctor: '::',
-													_0: A2(_user$project$Main_ops['..'], 1, 3),
-													_1: {
-														ctor: '::',
-														_0: A2(_user$project$Main_ops['..'], 1, 2),
-														_1: {ctor: '[]'}
-													}
-												}
-											}
-										}
-									}
-								})),
-						{
+						_user$project$Main$totient(120),
+						32),
+					_1: {
+						ctor: '::',
+						_0: _elm_lang$core$Native_Utils.eq(
+							_user$project$Main$totient(0),
+							0),
+						_1: {
 							ctor: '::',
-							_0: 0,
+							_0: _elm_lang$core$Native_Utils.eq(
+								_user$project$Main$totient(1600),
+								640),
 							_1: {
 								ctor: '::',
-								_0: 1,
+								_0: _elm_lang$core$Native_Utils.eq(
+									_user$project$Main$totient(37),
+									36),
 								_1: {
 									ctor: '::',
-									_0: 2,
+									_0: _elm_lang$core$Native_Utils.eq(
+										_user$project$Main$totient(330),
+										80),
 									_1: {
 										ctor: '::',
-										_0: 3,
+										_0: _elm_lang$core$Native_Utils.eq(
+											_user$project$Main$totient(65934),
+											19440),
 										_1: {
 											ctor: '::',
-											_0: 4,
+											_0: _elm_lang$core$Native_Utils.eq(
+												_user$project$Main$totient(1313),
+												1200),
 											_1: {
 												ctor: '::',
-												_0: 100000,
-												_1: {ctor: '[]'}
+												_0: _elm_lang$core$Native_Utils.eq(
+													_user$project$Main$totient(45),
+													24),
+												_1: {
+													ctor: '::',
+													_0: _elm_lang$core$Native_Utils.eq(
+														_user$project$Main$totient(-23),
+														0),
+													_1: {ctor: '[]'}
+												}
 											}
 										}
 									}
 								}
 							}
-						}),
-					_1: {
-						ctor: '::',
-						_0: _elm_lang$core$Native_Utils.eq(
-							A2(
-								_elm_lang$core$List$map,
-								_elm_lang$core$List$length,
-								_user$project$Main$sortByListLengths(
-									{
-										ctor: '::',
-										_0: {
-											ctor: '::',
-											_0: 14,
-											_1: {ctor: '[]'}
-										},
-										_1: {
-											ctor: '::',
-											_0: {
-												ctor: '::',
-												_0: 15,
-												_1: {ctor: '[]'}
-											},
-											_1: {
-												ctor: '::',
-												_0: {ctor: '[]'},
-												_1: {
-													ctor: '::',
-													_0: {
-														ctor: '::',
-														_0: 1,
-														_1: {ctor: '[]'}
-													},
-													_1: {
-														ctor: '::',
-														_0: {
-															ctor: '::',
-															_0: 12,
-															_1: {ctor: '[]'}
-														},
-														_1: {
-															ctor: '::',
-															_0: {
-																ctor: '::',
-																_0: 13,
-																_1: {ctor: '[]'}
-															},
-															_1: {ctor: '[]'}
-														}
-													}
-												}
-											}
-										}
-									})),
-							{
-								ctor: '::',
-								_0: 0,
-								_1: {
-									ctor: '::',
-									_0: 1,
-									_1: {
-										ctor: '::',
-										_0: 1,
-										_1: {
-											ctor: '::',
-											_0: 1,
-											_1: {
-												ctor: '::',
-												_0: 1,
-												_1: {
-													ctor: '::',
-													_0: 1,
-													_1: {ctor: '[]'}
-												}
-											}
-										}
-									}
-								}
-							}),
-						_1: {
-							ctor: '::',
-							_0: _elm_lang$core$Native_Utils.eq(
-								A2(
-									_elm_lang$core$List$map,
-									_elm_lang$core$List$length,
-									_user$project$Main$sortByListLengths(
-										{
-											ctor: '::',
-											_0: {
-												ctor: '::',
-												_0: 'a',
-												_1: {
-													ctor: '::',
-													_0: 'b',
-													_1: {
-														ctor: '::',
-														_0: 'c',
-														_1: {ctor: '[]'}
-													}
-												}
-											},
-											_1: {
-												ctor: '::',
-												_0: {
-													ctor: '::',
-													_0: 'a',
-													_1: {
-														ctor: '::',
-														_0: 'b',
-														_1: {ctor: '[]'}
-													}
-												},
-												_1: {
-													ctor: '::',
-													_0: {
-														ctor: '::',
-														_0: 'a',
-														_1: {ctor: '[]'}
-													},
-													_1: {ctor: '[]'}
-												}
-											}
-										})),
-								{
-									ctor: '::',
-									_0: 1,
-									_1: {
-										ctor: '::',
-										_0: 2,
-										_1: {
-											ctor: '::',
-											_0: 3,
-											_1: {ctor: '[]'}
-										}
-									}
-								}),
-							_1: {ctor: '[]'}
 						}
 					}
 				}
@@ -295,8 +95,8 @@ var _user$project$Main$test = _elm_lang$core$List$length(
 var _user$project$Main$main = _elm_lang$virtual_dom$Native_VirtualDom.staticProgram(
 	_elm_lang$html$Html$text(
 		function () {
-			var _p0 = _user$project$Main$test;
-			switch (_p0) {
+			var _p2 = _user$project$Main$test;
+			switch (_p2) {
 				case 0:
 					return 'Your implementation passed all tests.';
 				case 1:
@@ -307,7 +107,7 @@ var _user$project$Main$main = _elm_lang$virtual_dom$Native_VirtualDom.staticProg
 						'Your implementation failed ',
 						A2(
 							_elm_lang$core$Basics_ops['++'],
-							_elm_lang$core$Basics$toString(_p0),
+							_elm_lang$core$Basics$toString(_p2),
 							' tests.'));
 			}
 		}()));
