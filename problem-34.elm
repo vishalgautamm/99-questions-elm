@@ -1,7 +1,7 @@
 module Main exposing (..)
 
 import Html exposing (..)
-import List
+import List exposing (..)
 
 
 {-
@@ -12,23 +12,25 @@ import List
 
 totient : Int -> Int
 totient n =
-    0
+    List.range 1 n
+        |> List.filter (\x -> coprime n x)
+        |> List.length
 
 
-renderList : number -> List number
-renderList n =
-    case n of
-        0 ->
-            []
-
-        n ->
-            let
-                x =
-                    renderList (n - 1)
-            in
-                n :: [] ++ x
+coprime : Int -> Int -> Bool
+coprime a b =
+    gcd a b == 1
 
 
+gcd : Int -> Int -> Int
+gcd a b =
+    if b == 0 then
+        a
+    else
+        gcd (abs b) (a % b)
+
+
+main : Html msg
 main =
     Html.text <|
         case test of
