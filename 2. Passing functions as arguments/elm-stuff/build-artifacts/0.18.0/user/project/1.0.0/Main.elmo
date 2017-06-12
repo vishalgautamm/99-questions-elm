@@ -1,0 +1,113 @@
+var _user$project$Main$renderList = function (n) {
+	var _p0 = n;
+	if (_p0 === 0) {
+		return {ctor: '[]'};
+	} else {
+		var _p1 = _p0;
+		var x = _user$project$Main$renderList(_p1 - 1);
+		return {
+			ctor: '::',
+			_0: _p1,
+			_1: A2(
+				_elm_lang$core$Basics_ops['++'],
+				{ctor: '[]'},
+				x)
+		};
+	}
+};
+var _user$project$Main$totient = function (n) {
+	return 0;
+};
+var _user$project$Main$test = _elm_lang$core$List$length(
+	A2(
+		_elm_lang$core$List$filter,
+		F2(
+			function (x, y) {
+				return _elm_lang$core$Native_Utils.eq(x, y);
+			})(false),
+		{
+			ctor: '::',
+			_0: _elm_lang$core$Native_Utils.eq(
+				_user$project$Main$totient(10),
+				4),
+			_1: {
+				ctor: '::',
+				_0: _elm_lang$core$Native_Utils.eq(
+					_user$project$Main$totient(25),
+					20),
+				_1: {
+					ctor: '::',
+					_0: _elm_lang$core$Native_Utils.eq(
+						_user$project$Main$totient(120),
+						32),
+					_1: {
+						ctor: '::',
+						_0: _elm_lang$core$Native_Utils.eq(
+							_user$project$Main$totient(0),
+							0),
+						_1: {
+							ctor: '::',
+							_0: _elm_lang$core$Native_Utils.eq(
+								_user$project$Main$totient(1600),
+								640),
+							_1: {
+								ctor: '::',
+								_0: _elm_lang$core$Native_Utils.eq(
+									_user$project$Main$totient(37),
+									36),
+								_1: {
+									ctor: '::',
+									_0: _elm_lang$core$Native_Utils.eq(
+										_user$project$Main$totient(330),
+										80),
+									_1: {
+										ctor: '::',
+										_0: _elm_lang$core$Native_Utils.eq(
+											_user$project$Main$totient(65934),
+											19440),
+										_1: {
+											ctor: '::',
+											_0: _elm_lang$core$Native_Utils.eq(
+												_user$project$Main$totient(1313),
+												1200),
+											_1: {
+												ctor: '::',
+												_0: _elm_lang$core$Native_Utils.eq(
+													_user$project$Main$totient(45),
+													24),
+												_1: {
+													ctor: '::',
+													_0: _elm_lang$core$Native_Utils.eq(
+														_user$project$Main$totient(-23),
+														0),
+													_1: {ctor: '[]'}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}));
+var _user$project$Main$main = _elm_lang$virtual_dom$Native_VirtualDom.staticProgram(
+	_elm_lang$html$Html$text(
+		function () {
+			var _p2 = _user$project$Main$test;
+			switch (_p2) {
+				case 0:
+					return 'Your implementation passed all tests.';
+				case 1:
+					return 'Your implementation failed one test.';
+				default:
+					return A2(
+						_elm_lang$core$Basics_ops['++'],
+						'Your implementation failed ',
+						A2(
+							_elm_lang$core$Basics_ops['++'],
+							_elm_lang$core$Basics$toString(_p2),
+							' tests.'));
+			}
+		}()));
