@@ -15,33 +15,32 @@ module Main exposing (..)
 import Html
 
 
-primeNumb : List Int
-primeNumb =
-    [ 2, 3, 5, 7 ]
-
-
 isPrime : Int -> Bool
 isPrime n =
-    if List.member n primeNumb then
-        True
-    else if n % 2 == 0 then
-        False
-    else if n % 3 == 0 then
-        False
-    else if n % 5 == 0 then
-        False
-    else if n % 7 == 0 then
-        False
-    else if n <= 1 then
+    if n < 2 then
         False
     else
-        True
+        eratos (abs n) (List.range 2 (n // 2))
+
+
+eratos : Int -> List Int -> Bool
+eratos n xs =
+    case xs of
+        [] ->
+            True
+
+        x :: xs ->
+            if n % x == 0 then
+                False
+            else
+                eratos n (List.filter (\y -> (y % x) /= 0) xs)
 
 
 
 -- Unit Test
 
 
+main : Html.Html msg
 main =
     Html.text
         (if (test) then
